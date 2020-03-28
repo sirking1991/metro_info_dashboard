@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 
 use App\Regions;
 use App\LGU;
@@ -92,12 +93,9 @@ class HomeController extends Controller
             'mayor_id' => $pathMayorId,
         ];
 
-        Mail::to('sirking1991+metroinfo@gmail.com')->send(new AdminApplication($data));
+        Mail::to('metroinfoph@gmail.com')->queue(new AdminApplication($data));
 
-        // delete uploaded files
-        Storage::disk('local-uploads')->delete($pathApplicantId);
-        Storage::disk('local-uploads')->delete($pathAuthorizationLetter);
-        Storage::disk('local-uploads')->delete($pathMayorId);
+        // TODO: Call uploads folder clean up job
 
         $request->session()->flash('status', "Your application have been received and awaiting verification. You will receive an email once verified.");
 

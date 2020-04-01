@@ -23,6 +23,9 @@
                           <li class="nav-item">
                             <a class="nav-link" href="/broadcasts-list">Broadcast Messages</a>
                           </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/broadcasts-list">Incomming Messages</a>
+                          </li>
                       </div>
                 </ul>
                 @endif

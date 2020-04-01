@@ -18,12 +18,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    @livewireStyles
+    
 </head>
 <body>
     <div id="app">
-        <livewire:nav/>
+        @include('layouts.nav');
 
         <main class="py-4">
             @yield('content')
@@ -31,6 +30,5 @@
     </div>
 
 
-    @livewireScripts    
 </body>
 </html>

@@ -6,7 +6,7 @@
         @include('layouts.alert')
 
         <div class="row justify-content-center">
-            <div class="col-md-12">                
+            <div class="col-md-10">                
                 <div class="card shadow-sm bg-white rounded">
                     <div class="card-header">
                         <div class="row">

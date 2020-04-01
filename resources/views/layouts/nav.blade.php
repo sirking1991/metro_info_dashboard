@@ -21,7 +21,7 @@
                             <a class="nav-link" href="/events-list">Events</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="/broadcast-list">Broadcast</a>
+                            <a class="nav-link" href="/broadcasts-list">Broadcast Messages</a>
                           </li>
                       </div>
                 </ul>

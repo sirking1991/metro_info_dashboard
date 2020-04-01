@@ -45,7 +45,6 @@ class NewsController extends Controller
         $news = \App\News::find($id);
 
         if(null != $id && (!$news || $news->lgu_id != auth()->user()->lgu_id)) {
-            //return response('errors.404', 404);
             abort(404);
         }
 

@@ -25,7 +25,7 @@ class EventsController extends Controller
     public function index(Request $request)
     {
         $events = Events::oldest('event_from')
-            ->where('title', 'like', "%{$request->search}%")
+            ->where('name', 'like', "%{$request->search}%")
             ->where('lgu_id', auth()->user()->lgu_id)
             ->paginate(10);
 
@@ -58,8 +58,8 @@ class EventsController extends Controller
     public function save(Request $request)
     {
         $request->validate([
-            'event_from' => ['required', 'date'],
-            'event_to' => ['required', 'date'],
+            'event_from' => ['required', 'date', 'date_format:Y-m-d H:i:s'],
+            'event_to' => ['required', 'date', 'date_format:Y-m-d H:i:s'],
             'title' => ['required'],
         ]);
 
@@ -72,7 +72,7 @@ class EventsController extends Controller
 
         $events->event_from = $request->event_from;
         $events->event_to = $request->event_to;
-        $events->title = $request->title;
+        $events->name = $request->name;
         $events->broadcast = $request->broadcast;
         $events->save();
 

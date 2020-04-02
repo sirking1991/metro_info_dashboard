@@ -58,7 +58,7 @@ class BroadcastController extends Controller
     public function save(Request $request)
     {
         $request->validate([
-            'broadcast_on' => ['required', 'date'],
+            'broadcast_on' => ['required', 'date',  'date_format:Y-m-d H:i:s'],
             'message' => ['required'],
         ]);
 

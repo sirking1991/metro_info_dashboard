@@ -1,0 +1,8 @@
+id: 8641
+name: metro-info
+environments:
+    staging:
+        memory: 1024
+        build:
+        deploy:
+            - 'php artisan migrate --force'

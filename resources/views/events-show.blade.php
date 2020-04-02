@@ -42,8 +42,8 @@
     </div>
 
     <div class="form-group">
-        {!! Form::label('title', 'Event name:', ['class' => 'control-label']) !!}
-        {!! Form::text('title', $events->title ?? '', ['class' => 'form-control']) !!}
+        {!! Form::label('name', 'Event name:', ['class' => 'control-label']) !!}
+        {!! Form::text('name', $events->name ?? '', ['class' => 'form-control']) !!}
     </div>
 
     <div class="form-group">
@@ -58,11 +58,15 @@
 @section('scripts')
     <script type="text/javascript">
 
-        document.addEventListener('DOMContentLoaded', function(){ 
-            
-            
+        $('.datetime').datetimepicker();
 
-        }, false);
+        // document.addEventListener('DOMContentLoaded', function(){ 
+            
+        //     $(function () {
+                
+        //     });
+
+        // }, false);
 
     </script>
 @endsection

@@ -60,7 +60,7 @@ class EventsController extends Controller
         $request->validate([
             'event_from' => ['required', 'date', 'date_format:Y-m-d H:i:s'],
             'event_to' => ['required', 'date', 'date_format:Y-m-d H:i:s'],
-            'title' => ['required'],
+            'name' => ['required'],
         ]);
 
         $events = Events::find($request->id);

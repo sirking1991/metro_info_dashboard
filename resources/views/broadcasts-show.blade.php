@@ -31,7 +31,7 @@
         <div class="row">
             <div class="col-6">
                 {!! Form::label('broadcast_on', 'Broadcast on', ['class' => 'control-label']) !!}
-                {!! Form::datetime('broadcast_on', $broadcasts->broadcast_on ?? date('Y-m-d'), ['class' => 'form-control datetime']) !!}
+                {!! Form::datetime('broadcast_on', $broadcasts->broadcast_on ?? date('Y-m-d H:i:s'), ['class' => 'form-control datetime']) !!}
             </div>
             <div class="col-6">
                 {!! Form::label('status', 'Status:', ['class' => 'control-label']) !!}

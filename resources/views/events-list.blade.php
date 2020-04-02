@@ -34,7 +34,7 @@
         @endphp
         </td>
         <td>{{ $e->user->name }}</td>
-        <td>{{ $e->title }}</td>
+        <td>{{ $e->name }}</td>
         <td>{{ Str::title($e->broadcast) }}</td>
         <td><button class="btn btn-sm btn-primary" onclick="window.open('{{ url('/events/'.$e->id) }}', '{{ $e->id }}')"><i class="fas fa-external-link-alt"></i>View</button></td>
     </tr>

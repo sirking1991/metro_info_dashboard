@@ -14,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/regions', function(){
+    return \App\Regions::all();
+});
+
+Route::get('/lgus/{regionShortName}', function($regionShortName){
+    return \App\LGU::where('region_short_name', $regionShortName)->get();
+});
+
+Route::post('/send_message', 'MessangerController@send');
+
+Route::post('/register_app_user', 'AppUsersController@register');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

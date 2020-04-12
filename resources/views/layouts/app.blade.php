@@ -19,6 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     
+
 </head>
 <body>
     <div id="app">
@@ -29,6 +30,16 @@
         </main>
     </div>
 
+    <script defer>
+        window.addEventListener('load', (event) => {
+            var s = document.createElement("script");
+            s.type = "text/javascript";
+            s.src = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js";
+            $("body").append(s);            
+        });
+    </script>
 
+        
+    
 </body>
 </html>

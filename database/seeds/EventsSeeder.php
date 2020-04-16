@@ -17,7 +17,7 @@ class EventsSeeder extends Seeder
         $lgu = collect(\App\LGU::all()->modelKeys());
         $user = collect(\App\User::all()->modelKeys());
 
-        for ($n=0; $n < 50000; $n++) { 
+        for ($n=0; $n < 10000; $n++) { 
             $eventDate = $faker->dateTimeBetween('-30 days','30 days');
             $data[] = [
                 'lgu_id' => $lgu->random(),

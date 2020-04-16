@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
         
         $lgu = collect(\App\LGU::all()->modelKeys());
 
-        for ($n=0; $n < 10000; $n++) { 
+        for ($n=0; $n < 500; $n++) { 
             $data[] = [
                 'lgu_id' => $lgu->random(),
                 'allowed_lgu_admin' => 'yes',
@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
             ];
         }
 
-        $chunks = array_chunk($data, 500);
+        $chunks = array_chunk($data, 50);
         foreach ($chunks as $chunk) {
             \App\User::insert($chunk);
         }

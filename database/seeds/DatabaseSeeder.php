@@ -11,6 +11,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        
+        $this->call([
+            RegionSeeder::class,
+            LGUSeeder::class,
+            UserSeeder::class,
+            NewsSeeder::class,
+            EventsSeeder::class,
+            AppUserSeeder::class,
+            BroadcastSeeder::class,
+        ]);        
     }
 }

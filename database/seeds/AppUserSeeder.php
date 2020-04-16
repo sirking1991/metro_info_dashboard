@@ -16,7 +16,7 @@ class AppUserSeeder extends Seeder
         
         $lgu = collect(\App\LGU::all()->modelKeys());
 
-        for ($n=0; $n < 50000; $n++) { 
+        for ($n=0; $n < 1000; $n++) { 
             $data[] = [
                 'device_id' => $faker->uuid,
                 'first_name' => $faker->firstName(),
@@ -29,7 +29,7 @@ class AppUserSeeder extends Seeder
             ];
         }
 
-        $chunks = array_chunk($data, 5000);
+        $chunks = array_chunk($data, 100);
         foreach ($chunks as $chunk) {
             \App\AppUser::insert($chunk);
         }

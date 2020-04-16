@@ -21,19 +21,19 @@ Route::get('/regions', function () {
 
 
 Route::get('/lgus/{regionShortName}', function ($regionShortName) {
-    return cache()->remember('/lgus/{regionShortName}', 60 * 60 * 24 * 30, function () use ($regionShortName) {
+    return cache()->remember('/lgus/'.$regionShortName, 60 * 60 * 24 * 30, function () use ($regionShortName) {
         return \App\LGU::where('region_short_name', $regionShortName)->get();
     });
 });
 
 Route::get('/lgu/{id}', function ($id) {
-    return cache()->remember('/lgu/{id}', 60 * 60 * 24, function () use ($id) {
+    //return cache()->remember('/lgu/'.$id, 60 * 60 * 24, function () use ($id) {
         return \App\LGU::find($id);
-    });
+    //});
 });
 
 Route::get('/news/{lgu_id}', function ($lgu_id) {
-    return cache()->remember('/news/{lgu_id}', 60, function () use ($lgu_id) {
+    return cache()->remember('/news/'.$lgu_id, 60, function () use ($lgu_id) {
         return \App\News::where('lgu_id', $lgu_id)
             ->where('status', 'published')
             ->where('posting_date', '<=', now())
@@ -44,7 +44,7 @@ Route::get('/news/{lgu_id}', function ($lgu_id) {
 });
 
 Route::get('/events/{lgu_id}', function ($lgu_id) {
-    return cache()->remember('/events/{lgu_id}', 60, function () use ($lgu_id) {
+    return cache()->remember('/events/'.$lgu_id, 60, function () use ($lgu_id) {
         return \App\Events::where('lgu_id', $lgu_id)
             ->where('event_from', '>=', date('Y-m-d H:i:s'))
             ->oldest('event_from')

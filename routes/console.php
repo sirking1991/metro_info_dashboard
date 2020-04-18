@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\BroadcastMessage;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 
@@ -17,3 +18,7 @@ use Illuminate\Support\Facades\Artisan;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->describe('Display an inspiring quote');
+
+Artisan::command('broadcast:message', function(){
+    event(new BroadcastMessage(11, date('Y-m-d H:i:s') . ' Test'));
+});

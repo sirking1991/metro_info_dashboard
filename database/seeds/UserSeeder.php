@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
         
         $lgu = collect(\App\LGU::all()->modelKeys());
 
-        for ($n=0; $n < 500; $n++) { 
+        for ($n=0; $n < 100; $n++) { 
             $data[] = [
                 'lgu_id' => $lgu->random(),
                 'allowed_lgu_admin' => 'yes',

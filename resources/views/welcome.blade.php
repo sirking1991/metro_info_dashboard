@@ -85,7 +85,7 @@
 
             <div class="content">
                 <div class="m-b-md">
-                    <img src="{{ asset("images/milogo_sml.png")  }}" alt="metro-info logo" srcset="">
+                    <img src="{{ secure_asset("images/milogo_sml.png")  }}" alt="metro-info logo" srcset="">
                 </div>
                 <div class="title m-b-md">
                     {{ config('app.name', 'Laravel') }}

@@ -11,15 +11,16 @@
                         <ul>
                             <li>Get timely, accurate news, events from your local government. </li>
                             <li>Get notified of important announcements</li>
-                            <li>Send feedback or report crime.</li>
+                            <li>Send feedback</li>
+                            <li>Help by reporting an incident or issues in your environment.</li>
                         </ul>
                     </p>
                     <div class=" text-center">
                         <a href="#">
-                            <img src="{{ asset("images/google-play-badge.png") }}" alt="" srcset="" width="256">                    
+                            <img src="{{ secure_asset("images/google-play-badge.png") }}" alt="" srcset="" width="256">                    
                         </a>
                         <a href="#">
-                            <img src="{{ asset("images/apple-appstore-badge.png") }}" alt="" srcset="" width="256">                    
+                            <img src="{{ secure_asset("images/apple-appstore-badge.png") }}" alt="" srcset="" width="256">                    
                         </a>
                     </div>
                 </div>

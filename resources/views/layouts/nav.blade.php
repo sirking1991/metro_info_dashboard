@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <nav class="navbar navbar-light">
                 <a class="navbar-brand" href="/">
-                  <img src="{{ asset('images/milogo_sml.png') }}" width="30" height="30" class="d-inline-block align-top" alt="">
+                  <img src="{{ secure_asset('images/milogo_sml.png') }}" width="30" height="30" class="d-inline-block align-top" alt="">
                   {{ config('app.name', 'Laravel') }}
                 </a>
               </nav>

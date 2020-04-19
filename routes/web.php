@@ -21,7 +21,8 @@ Route::get('/', function () {
 
 Route::get('/about-lgu/{lguSlug}', function($lguSlug){
     $lgu = \App\LGU::where('slug', $lguSlug)->limit(1)->get();
-    return view('about-lgu', ['lgu' => $lgu[0]]);    
+    return redirect($lgu[0]->{'about'});
+    // return view('about-lgu', ['lgu' => $lgu[0]]);    
 });
 
 Route::get('/download-app', function () {

@@ -84,6 +84,9 @@
             @endif
 
             <div class="content">
+                <div class="m-b-md">
+                    <img src="{{ asset("images/milogo_sml.png")  }}" alt="metro-info logo" srcset="">
+                </div>
                 <div class="title m-b-md">
                     {{ config('app.name', 'Laravel') }}
                 </div>
@@ -96,16 +99,9 @@
                     <img src="" alt="">
                 </div>
 
-                {{-- <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div> --}}
+                <div class="links">
+                    <a href="https://www.websitepolicies.com/policies/view/IJZauoEt" target="toc">Terms of use</a>
+                </div>
             </div>
         </div>
     </body>

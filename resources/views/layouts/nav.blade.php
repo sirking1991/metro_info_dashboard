@@ -1,9 +1,12 @@
 <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url('/home') }}">
-                <h3>{{ config('app.name', 'Laravel') }}</h3>
-            </a>
+            <nav class="navbar navbar-light">
+                <a class="navbar-brand" href="/">
+                  <img src="{{ asset('images/milogo_sml.png') }}" width="30" height="30" class="d-inline-block align-top" alt="">
+                  {{ config('app.name', 'Laravel') }}
+                </a>
+              </nav>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
             </button>

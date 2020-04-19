@@ -24,6 +24,4 @@
         <a href="https://www.websitepolicies.com/policies/view/IJZauoEt" target="toc">Terms of use</a>
     </div>
 </div>
-
-
 @endsection

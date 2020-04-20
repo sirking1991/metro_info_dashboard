@@ -17,14 +17,16 @@ class MessagesSeeder extends Seeder
         $lgu = collect(\App\LGU::all()->modelKeys());
         $appUser = collect(\App\AppUser::all()->modelKeys());
 
-        for ($n=0; $n < 100; $n++) { 
+        for ($n=0; $n < 1000; $n++) { 
             $ap = \App\AppUser::find($appUser->random());
+            $lguId = $lgu->random();
             $data[] = [
-                'lgu_id' => $lgu->random(),
-                'device_id' => $ap->uuid,
-                'appuser_id' => $appUser->random(),
+                'lgu_id' => $lguId,
+                'device_id' => $ap->device_id,
+                'appuser_id' => $ap->id,
                 'message' => $faker->sentence(),
-                'status' => $faker->randomElement([null,$faker->dateTimeBetween($startDate = '-30 days', $endDate = '3 days')]),
+                'read_on' => null,
+                'read_by' => null,
                 'created_at' => now()->toDateTimeString(),
                 'updated_at' =>now()->toDateTimeString(),
             ];

@@ -17,10 +17,10 @@
                     </p>
                     <div class=" text-center">
                         <a href="#">
-                            <img src="{{ secure_asset("images/google-play-badge.png") }}" alt="" srcset="" width="256">                    
+                            <img src="{{ url("images/google-play-badge.png") }}" alt="" srcset="" width="256">                    
                         </a>
                         <a href="#">
-                            <img src="{{ secure_asset("images/apple-appstore-badge.png") }}" alt="" srcset="" width="256">                    
+                            <img src="{{ url("images/apple-appstore-badge.png") }}" alt="" srcset="" width="256">                    
                         </a>
                     </div>
                 </div>

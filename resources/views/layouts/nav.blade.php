@@ -2,8 +2,8 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container-fluid">
             <nav class="navbar navbar-light">
-                <a class="navbar-brand" href="/">
-                  <img src="{{ secure_asset('images/milogo_sml.png') }}" width="30" height="30" class="d-inline-block align-top" alt="">
+                <a class="navbar-brand" href="/home">
+                  <img src="{{ url('images/milogo_sml.png') }}" width="30" height="30" class="d-inline-block align-top" alt="">
                   {{ config('app.name', 'Laravel') }}
                 </a>
               </nav>
@@ -27,7 +27,7 @@
                             <a class="nav-link" href="/broadcasts-list">Broadcast Messages</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="/broadcasts-list">Incomming Messages</a>
+                            <a class="nav-link" href="/messages-list">Incoming Messages</a>
                           </li>
                       </div>
                 </ul>

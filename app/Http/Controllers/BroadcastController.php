@@ -16,7 +16,7 @@ class BroadcastController extends Controller
     {
         $this->middleware('auth');
     }
-        
+
     /**
      * Display a listing of the resource.
      *
@@ -29,7 +29,7 @@ class BroadcastController extends Controller
             ->where('lgu_id', auth()->user()->lgu_id)
             ->paginate(10);
 
-        return view('broadcasts-list', ['broadcasts' => $broadcasts, 'search' => $request->search]);    
+        return view('broadcasts-list', ['broadcasts' => $broadcasts, 'search' => $request->search]);
     }
 
     /**
@@ -38,11 +38,11 @@ class BroadcastController extends Controller
      * @param  integer  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id = null) 
+    public function show($id = null)
     {
         $broadcasts = Broadcast::find($id);
 
-        if(null != $id && (!$broadcasts || $broadcasts->lgu_id != auth()->user()->lgu_id)) {
+        if (null != $id && (!$broadcasts || $broadcasts->lgu_id != auth()->user()->lgu_id)) {
             abort(404);
         }
 
@@ -67,12 +67,14 @@ class BroadcastController extends Controller
             $broadcasts = new Broadcast();
             $broadcasts->lgu_id = auth()->user()->lgu_id;
             $broadcasts->posted_by = auth()->user()->id;
+            $broadcasts->status = 'pending';
         }
 
         $broadcasts->broadcast_on = $request->broadcast_on;
+        $broadcasts->broadcast_via = $request->broadcast_via;
         $broadcasts->message = $request->message;
         $broadcasts->save();
-
+        
         $request->session()->flash('status', 'Broadcast created and was put in queue for processing');
 
         return redirect('/broadcasts/' . $broadcasts->id);
@@ -85,7 +87,7 @@ class BroadcastController extends Controller
         if (!$broadcasts || $broadcasts->lgu_id != auth()->user()->lgu_id) {
             return response('', 404);
         }
-        
+
         $broadcasts->delete();
 
         return response()->json();

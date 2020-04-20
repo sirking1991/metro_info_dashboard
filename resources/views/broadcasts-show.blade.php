@@ -29,11 +29,16 @@
     
     <div class="form-group">
         <div class="row">
-            <div class="col-6">
+            <div class="col-4">
                 {!! Form::label('broadcast_on', 'Broadcast on', ['class' => 'control-label']) !!}
-                {!! Form::datetime('broadcast_on', $broadcasts->broadcast_on ?? date('Y-m-d H:i:s'), ['class' => 'form-control datetime']) !!}
+                {!! Form::datetime('broadcast_on', $broadcasts->broadcast_on ?? date('Y-m-d H:i:s'), ['class' => 'form-control datetime']) !!}                
             </div>
-            <div class="col-6">
+            <div class="col-4">
+                {!! Form::label('broadcast_via', 'Broadcast via', ['class' => 'control-label']) !!}
+                
+                {!! Form::select('broadcast_via', ['net' => 'Net', 'sms' => 'SMS'], $broadcasts->broadcast_via ?? 'net', ['class' => 'form-control'], ) !!}
+            </div>
+            <div class="col-4">
                 {!! Form::label('status', 'Status:', ['class' => 'control-label']) !!}
                 <input type="text" name="status" class="form-control" disabled value="{{ Str::title($status) }}"/>
             </div>

@@ -56,6 +56,8 @@ Route::get('/events/{lgu_id}', function ($lgu_id) {
 Route::get('/bcastmsg/{lgu_id}', function ($lgu_id) {
     return cache()->remember('/bcastmsg/{lgu_id}', 60, function () use ($lgu_id) {
         return \App\Broadcast::where('lgu_id', $lgu_id)
+            ->where('broadcast_via', 'net')
+            ->where('status', 'done')
             ->oldest('broadcast_on')
             ->limit(3)
             ->get();

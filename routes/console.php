@@ -19,6 +19,6 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->describe('Display an inspiring quote');
 
-Artisan::command('broadcast:message', function(){
-    event(new BroadcastMessage(11, date('Y-m-d H:i:s') . ' Test'));
+Artisan::command('mi:bcastmsg:process', function(){
+    \App\Jobs\BroadcastMessage::dispatchNow();
 });

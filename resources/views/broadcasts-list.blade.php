@@ -13,6 +13,7 @@
         <th scope="col">ID</th>        
         <th scope="col">Posted by</th>
         <th scope="col">Broadcast on</th>
+        <th scope="col">Broadcast via</th>
         <th scope="col">Message</th>
         <th scope="col">Status</th>
         <th scope="col">&nbsp;</th>
@@ -25,9 +26,10 @@
         <td>{{ $b->id }}</td>
         <td>{{ $b->user->name }}</td>
         <td>
-        @php
-            echo date('F j, Y, g:i a', strtotime($b->broadcast_on));
-        @endphp
+            @php echo date('F j, Y, g:i a', strtotime($b->broadcast_on)); @endphp
+        </td>
+        <td>
+            @php echo strtoupper($b->broadcast_via); @endphp
         </td>
         <td>{{ $b->message }}</td>
         <td>{{ Str::title($b->status) }}</td>

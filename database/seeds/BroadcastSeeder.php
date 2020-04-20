@@ -22,6 +22,7 @@ class BroadcastSeeder extends Seeder
                 'lgu_id' => $lgu->random(),
                 'posted_by' => $user->random(),
                 'broadcast_on' => $faker->dateTimeBetween($startDate = '-30 days', $endDate = '3 days'),
+                'broadcast_via' => $faker->randomElement($array = array ('net','sms')) ,
                 'message' => $faker->sentence(),
                 'status' => 'pending',
                 'created_at' => now()->toDateTimeString(),

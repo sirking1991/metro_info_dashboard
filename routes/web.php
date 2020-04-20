@@ -29,7 +29,10 @@ Route::get('/download-app', function () {
     return view('download-app');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', function(){
+    return redirect('messages-list');
+});
 
 Route::get('/news-list', 'NewsController@index')->name('news');
 Route::get('/news/{id?}', 'NewsController@show');
@@ -47,5 +50,8 @@ Route::get('/broadcasts-list', 'BroadcastController@index')->name('broadcast');
 Route::get('/broadcasts/{id?}', 'BroadcastController@show');
 Route::match(['post', 'put'], '/broadcasts/{id?}', 'BroadcastController@save');
 Route::get('/broadcasts/{id}/delete', 'BroadcastController@delete');
+
+Route::get('/messages-list', 'MessageController@index')->name('messages');
+Route::get('/messages/{id?}/mark-read', 'MessageController@markRead');
 
 Route::post('/applyadmin', 'HomeController@applyAdmin');

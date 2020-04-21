@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card shadow-sm bg-white rounded">
-                <div class="card-header"><strong>Dashboard</strong></div>
+                {{-- <div class="card-header"><strong>Dashboard</strong></div> --}}
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,6 +13,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
+
+                    <h1>Welcome to metro-info</h1>
 
                 </div>
             </div>

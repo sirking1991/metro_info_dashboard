@@ -35,7 +35,8 @@ class HomeController extends Controller
             return view('applyadmin', [
                 'regions' => json_encode(\App\Regions::all()),
                 'lgus' => json_encode(\App\LGU::all())
-            ]);
+            ]);            
+            
         } else {
             return view('home');
         }

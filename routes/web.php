@@ -22,17 +22,17 @@ Route::get('/', function () {
 Route::get('/about-lgu/{lguSlug}', function($lguSlug){
     $lgu = \App\LGU::where('slug', $lguSlug)->limit(1)->get();
     return redirect($lgu[0]->{'about'});
-    // return view('about-lgu', ['lgu' => $lgu[0]]);    
 });
 
 Route::get('/download-app', function () {
     return view('download-app');
 });
 
-//Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home', function(){
-    return redirect('messages-list');
-});
+Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', function(){
+//     return view('home');
+//     //return redirect('messages-list');
+// });
 
 Route::get('/news-list', 'NewsController@index')->name('news');
 Route::get('/news/{id?}', 'NewsController@show');

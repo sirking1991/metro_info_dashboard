@@ -36,8 +36,8 @@ class BroadcastMessage implements ShouldQueue
     {
         // Configure HTTP basic authorization: BasicAuth
         $config = \ClickSend\Configuration::getDefaultConfiguration()
-            ->setUsername('sirking1991@gmail.com')
-            ->setPassword('D7E564D5-9F4E-3719-E7D7-19214A866B0F');
+            ->setUsername(env('CLICKSEND_USERNAME'))
+            ->setPassword(env('CLICKSEND_PASSWORD'));
         $apiInstance = new \ClickSend\Api\SMSApi(new \GuzzleHttp\Client(), $config);
 
         $messages = \App\Broadcast::where('status', 'pending')

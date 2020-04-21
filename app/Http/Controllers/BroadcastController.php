@@ -67,7 +67,7 @@ class BroadcastController extends Controller
             $broadcasts = new Broadcast();
             $broadcasts->lgu_id = auth()->user()->lgu_id;
             $broadcasts->posted_by = auth()->user()->id;
-            $broadcasts->status = 'pending';
+            $broadcasts->status = 'sms' == $request->broadcast_via ? 'pending' : 'done';
         }
 
         $broadcasts->broadcast_on = $request->broadcast_on;

@@ -73,6 +73,7 @@ class EventsController extends Controller
         $events->event_from = $request->event_from;
         $events->event_to = $request->event_to;
         $events->name = $request->name;
+        $events->content = $request->content;
         $events->broadcast = $request->broadcast;
         $events->save();
 

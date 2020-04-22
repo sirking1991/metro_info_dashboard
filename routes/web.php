@@ -54,4 +54,7 @@ Route::get('/broadcasts/{id}/delete', 'BroadcastController@delete');
 Route::get('/messages-list', 'MessageController@index')->name('messages');
 Route::get('/messages/{id?}/mark-read', 'MessageController@markRead');
 
+Route::get('/app-settings', 'LguController@appSettings');
+Route::match(['post', 'put'], '/app-settings', 'LguController@saveAppSettings');
+
 Route::post('/applyadmin', 'HomeController@applyAdmin');

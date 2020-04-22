@@ -33,34 +33,34 @@ Route::get('/lgu/{id}', function ($id) {
 });
 
 Route::get('/news/{lgu_id}', function ($lgu_id) {
-    return cache()->remember('/news/' . $lgu_id, 60 * 15, function () use ($lgu_id) {
+    // return cache()->remember('/news/' . $lgu_id, 60 * 15, function () use ($lgu_id) {
         return \App\News::where('lgu_id', $lgu_id)
             ->where('status', 'published')
             ->where('posting_date', '<=', now())
             ->latest('posting_date')
             ->limit(10)
             ->get();
-    });
+    // });
 });
 
 Route::get('/events/{lgu_id}', function ($lgu_id) {
-    return cache()->remember('/events/' . $lgu_id, 60 * 15, function () use ($lgu_id) {
+    // return cache()->remember('/events/' . $lgu_id, 60 * 15, function () use ($lgu_id) {
         return \App\Events::where('lgu_id', $lgu_id)
             ->where('event_from', '>=', date('Y-m-d H:i:s'))
             ->oldest('event_from')
             ->limit(10)
             ->get();
-    });
+    // });
 });
 
 Route::get('/bcastmsg/{lgu_id}', function ($lgu_id) {
-    return cache()->remember('/bcastmsg/' . $lgu_id, 60 * 15, function () use ($lgu_id) {
+    // return cache()->remember('/bcastmsg/' . $lgu_id, 60 * 15, function () use ($lgu_id) {
         return \App\Broadcast::where('lgu_id', $lgu_id)
             ->where('broadcast_via', 'net')
             ->oldest('broadcast_on')
             ->limit(3)
             ->get();
-    });
+    // });
 });
 
 Route::post('/send_message', 'MessengerController@send');

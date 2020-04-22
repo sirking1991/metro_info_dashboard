@@ -30,7 +30,7 @@
         <td>{{ $n->subject }}</td>
         <td>{{ Str::title($n->status) }}</td>
         <td>{{ Str::title($n->broadcast) }}</td>
-        <td><button class="btn btn-sm btn-primary" onclick="window.open('{{ url('/news/'.$n->id) }}', '{{ $n->id }}')"><i class="fas fa-external-link-alt"></i>View</button></td>
+        <td><button class="btn btn-sm btn-primary" onclick="window.open('{{ '/news/'.$n->id }}', '{{ $n->id }}')"><i class="fas fa-external-link-alt"></i>View</button></td>
     </tr>
     @endforeach
 @endsection

@@ -33,7 +33,7 @@
         </td>
         <td>{{ $b->message }}</td>
         <td>{{ Str::title($b->status) }}</td>
-        <td><button class="btn btn-sm btn-primary" onclick="window.open('{{ url('/broadcasts/'.$b->id) }}', '{{ $b->id }}')"><i class="fas fa-external-link-alt"></i>View</button></td>
+        <td><button class="btn btn-sm btn-primary" onclick="window.open('{{ '/broadcasts/' . $b->id }}', '{{ $b->id }}')"><i class="fas fa-external-link-alt"></i>View</button></td>
     </tr>
     @endforeach
 @endsection

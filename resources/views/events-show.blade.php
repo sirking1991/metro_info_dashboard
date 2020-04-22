@@ -47,6 +47,11 @@
     </div>
 
     <div class="form-group">
+        {!! Form::label('content', 'Content:', ['class' => 'control-label']) !!}
+        {!! Form::textarea('content', $events->content ?? '', ['class' => 'form-control']) !!}
+    </div>    
+
+    <div class="form-group">
         {!! Form::label('broadcast', 'Broadcast:', ['class' => 'control-label']) !!}
         {!! Form::select('broadcast', ['no' => 'No', 'yes' => 'Yes'], $events->broadcast ?? 'no') !!}
     </div>    

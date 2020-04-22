@@ -10,14 +10,14 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ url('js/app.js') }}" defer></script>
+    <script src="/js/app.js" defer></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    {{-- <link rel="dns-prefetch" href="//fonts.gstatic.com"> --}}
+    {{-- <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
 
     <!-- Styles -->
-    <link href="{{ url('css/app.css') }}" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
     
 
 </head>
@@ -31,12 +31,12 @@
     </div>
 
     <script defer>
-        window.addEventListener('load', (event) => {
-            var s = document.createElement("script");
-            s.type = "text/javascript";
-            s.src = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js";
-            $("body").append(s);            
-        });
+        // window.addEventListener('load', (event) => {
+        //     var s = document.createElement("script");
+        //     s.type = "text/javascript";
+        //     s.src = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js";
+        //     $("body").append(s);            
+        // });
     </script>
 
         

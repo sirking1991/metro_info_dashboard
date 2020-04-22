@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <nav class="navbar navbar-light">
                 <a class="navbar-brand" href="/home">
-                  <img src="{{ asset('images/milogo_sml.png') }}" width="30" height="30" class="d-inline-block align-top" alt="">
+                  <img src='/images/milogo_sml.png' width="30" height="30" class="d-inline-block align-top" alt="">
                   {{ config('app.name', 'Laravel') }}
                 </a>
               </nav>
@@ -29,6 +29,9 @@
                           <li class="nav-item">
                             <a class="nav-link" href="/messages-list">Incoming Messages</a>
                           </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/app-settings">App Settings</a>
+                          </li>
                       </div>
                 </ul>
                 @endif
@@ -43,13 +46,13 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                <a class="dropdown-item" href="/logout"
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                <form id="logout-form" action="/logout" method="POST" style="display: none;">
                                     @csrf
                                 </form>
                             </div>

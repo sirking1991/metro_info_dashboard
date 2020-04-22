@@ -50,7 +50,7 @@
     function markRead(id) {
         if(!confirm('Are you sure you wan to mark the message as read?')) return;
 
-        $.get("{{ url('/messages/') }}/" + id + "/mark-read", function(){
+        $.get('/messages/' + id + '/mark-read', function(){
             location.reload();
         });
     }

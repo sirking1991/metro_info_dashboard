@@ -72,20 +72,18 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="/home">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="/login">Login</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
+                        <a href="/register">Register</a>
                     @endauth
                 </div>
             @endif
 
             <div class="content">
                 <div class="m-b-md">
-                    <img src="{{ asset("images/milogo_sml.png")  }}" alt="metro-info logo" srcset="">
+                    <img src="/images/milogo_sml.png" alt="metro-info logo" srcset="">
                 </div>
                 <div class="title m-b-md">
                     {{ config('app.name', 'Laravel') }}

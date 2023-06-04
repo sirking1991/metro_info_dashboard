@@ -1,6 +1,9 @@
 <?php
+namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Faker;
+use Hash;
 
 class UserSeeder extends Seeder
 {
@@ -12,9 +15,20 @@ class UserSeeder extends Seeder
     public function run()
     {
         $data = [];
+
         $faker = Faker\Factory::create();
         
         $lgu = collect(\App\LGU::all()->modelKeys());
+
+        $data[] = [
+            'lgu_id' => $lgu->random(),
+            'allowed_lgu_admin' => 'yes',
+            'name' => 'Sherwin de Jesus',
+            'email' => 'sirking1991@gmail.com',
+            'password' => Hash::make('password'),
+            'created_at' => now()->toDateTimeString(),
+            'updated_at' =>now()->toDateTimeString(),                
+        ];        
 
         for ($n=0; $n < 100; $n++) { 
             $data[] = [
@@ -22,10 +36,9 @@ class UserSeeder extends Seeder
                 'allowed_lgu_admin' => 'yes',
                 'name' => $faker->name(),
                 'email' => $faker->safeEmail,
-                'password' => $faker->shuffle($faker->sentence()),
+                'password' => Hash::make('password'),
                 'created_at' => now()->toDateTimeString(),
                 'updated_at' =>now()->toDateTimeString(),                
-
             ];
         }
 

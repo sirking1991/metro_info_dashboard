@@ -1,8 +1,10 @@
 <?php
+namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Faker;
 
-class NewsSeeder extends Seeder
+class BroadcastSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -21,11 +23,10 @@ class NewsSeeder extends Seeder
             $data[] = [
                 'lgu_id' => $lgu->random(),
                 'posted_by' => $user->random(),
-                'status' => $faker->randomElement(['published','unpublish','draft']),
-                'posting_date' => $faker->dateTimeBetween('-30 days','30 days'),
-                'subject' => $faker->sentence(),
-                'content' => $faker->paragraph(),
-                'broadcast' => $faker->randomElement(['yes','no']),
+                'broadcast_on' => $faker->dateTimeBetween($startDate = '-30 days', $endDate = '3 days'),
+                'broadcast_via' => $faker->randomElement($array = array ('net','sms')) ,
+                'message' => $faker->sentence(),
+                'status' => 'pending',
                 'created_at' => now()->toDateTimeString(),
                 'updated_at' =>now()->toDateTimeString(),
             ];
@@ -33,7 +34,7 @@ class NewsSeeder extends Seeder
 
         $chunks = array_chunk($data, 500);
         foreach ($chunks as $chunk) {
-            \App\News::insert($chunk);
+            \App\Broadcast::insert($chunk);
         }
     }
 }
